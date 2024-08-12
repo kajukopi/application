@@ -20,4 +20,4 @@ const validate = (schema) => (req, res, next) => {
   next()
 }
 
-module.exports = {authRouter, isAuthenticated, authorizeRole, validate}
+module.exports = {isAuthenticated, authorizeRole, validate}

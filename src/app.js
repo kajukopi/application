@@ -46,8 +46,8 @@ app.use(
   })
 )
 // Routes
-const { authRouter, isAuthenticated, authorizeRole } = require("./routes/auth")
-const clientRoutes = require("./routes/clients")
+const { isAuthenticated, authorizeRole } = require("./middlewares/handler")
+const assetRoutes = require("./routes/assets")
 // Protecting routes
-app.use("/clients", isAuthenticated, clientRoutes)
+app.use("/assets", isAuthenticated, assetRoutes)
 module.exports = app
