@@ -30,7 +30,7 @@ mongoose
 const app = express()
 app.use(logger("dev"))
 app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+app.use(express.urlencoded({extended: true}))
 app.use(methodOverride("_method"))
 app.use(cookieParser())
 app.set("view engine", "hbs")
@@ -41,13 +41,16 @@ app.use(
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
-    store: MongoStore.create({ mongoUrl: process.env.DATABASE_URL }),
-    cookie: { maxAge: 1000 * 60 * 60 * 24 }, // 1 day
+    store: MongoStore.create({mongoUrl: process.env.DATABASE_URL}),
+    cookie: {maxAge: 1000 * 60 * 60 * 24}, // 1 day
   })
 )
+
 // Routes
-const { isAuthenticated, authorizeRole } = require("./middlewares/handler")
+const {isAuthenticated, authorizeRole} = require("./middlewares/handler")
+const authRoutes = require("./routes/auth")
 const assetRoutes = require("./routes/assets")
 // Protecting routes
-app.use("/assets", isAuthenticated, assetRoutes)
+app.use("/", /* isAuthenticated, */ authRoutes)
+app.use("/assets", /* isAuthenticated, */ assetRoutes)
 module.exports = app

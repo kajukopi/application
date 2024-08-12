@@ -3,7 +3,7 @@ const isAuthenticated = (req, res, next) => {
   if (req.session.userId) {
     return next()
   }
-  res.redirect("/login")
+  res.status(403).render("error", {message: "Access denied"})
 }
 
 // Middleware to authorize based on role

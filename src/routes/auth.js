@@ -47,4 +47,19 @@ router.get("/logout", (req, res) => {
   res.redirect("/login")
 })
 
+// login
+router.get("/login", (req, res) => {
+  res.render("login")
+})
+
+// login
+router.get("/", (req, res) => {
+  res.render("home", {array: [1, 2, 3, 4, 5, 6, 7, 8, 9]})
+})
+
+// login
+router.get("/register", (req, res) => {
+  res.render("register")
+})
+
 module.exports = router

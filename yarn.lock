@@ -719,6 +719,11 @@ make-dir@^3.1.0:
   dependencies:
     semver "^6.0.0"
 
+mdb-ui-kit@^7.3.2:
+  version "7.3.2"
+  resolved "https://registry.yarnpkg.com/mdb-ui-kit/-/mdb-ui-kit-7.3.2.tgz#24d67b352452e27ed889232c391df15a6e758667"
+  integrity sha512-iFng2p5Tfx/IKMEAxG2/pFTDPPS0FQ5xossQkuV9TFUaMAxtOlTbRgogfachBabC6A35xyJmA6ZWFeblTPJnEw==
+
 media-typer@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
